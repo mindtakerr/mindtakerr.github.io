@@ -18,7 +18,7 @@
 
         $(document).ready(function () {
 
-            var table = $('#songTable').DataTable({       
+            var table = $('#songTable').DataTable({
                 ajax: 'songlist.json',
                 columns: [
                     {
@@ -32,7 +32,7 @@
                     { data: 'title' },
                     { data: 'year' },
                     { data: 'decade' },
-                    { data:'usdbHTML'}
+                    { data: 'usdbHTML' }
                 ],
                 columnDefs: [
                     {
@@ -67,10 +67,10 @@
             var img = d.imageHTML;
 
             return (
-                '<div class="container" style="padding-left:50px;">'+                
+                '<div class="container" style="padding-left:50px;">' +
                 '<div class="row">' +
                 '<div class="col">' +
-                img.replace('height:50px;','height:200px;')+
+                img.replace('height:50px;', 'height:200px;') +
                 '</div>' +
                 '<div class="col">' +
                 '<h2>' +
@@ -85,7 +85,7 @@
                 '<h5>' +
                 d.usdbHTML +
                 '</h5>' +
-                '</div>' +             
+                '</div>' +
                 '</div>' +
                 '</div>'
             );
@@ -99,34 +99,35 @@
         &nbsp;
     </p>
 
-    <table id="songTable" class="display" style="width:75%">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Cover</th>
-                <th>Artist</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Decade</th>
-                <th>USDB</th>
-            </tr>
-        </thead>
-        <!--<tbody>
-            -- Will Be Replaced --
-        </tbody>-->
-        <tfoot>
-            <tr>
-                <th></th>
-                <th>Cover</th>
-                <th>Artist</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Decade</th>
-                <th>USDB</th>
-            </tr>
-        </tfoot>
-    </table>
-
+    <div class="container" style="width:75%">
+        <table id="songTable" class="display">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Cover</th>
+                    <th>Artist</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Decade</th>
+                    <th>USDB</th>
+                </tr>
+            </thead>
+            <!--<tbody>
+                -- Will Be Replaced --
+            </tbody>-->
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Cover</th>
+                    <th>Artist</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Decade</th>
+                    <th>USDB</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
 </body>
 </html>
