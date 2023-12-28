@@ -26,7 +26,7 @@
                         data: null,
                         defaultContent: '',
                     },
-                    { data: 'coverImageHTMLAsBase64' },
+                    { data: 'imageHTML' },
                     { data: 'artist' },
                     { data: 'title' },
                     { data: 'year' },
@@ -55,7 +55,7 @@
 
         function format(d) {
             // `d` is the original data object for the row
-            var img = d.coverImageHTMLAsBase64;
+            var img = d.imageHTML;
 
             return (
                 '<div class="container" style="padding-left:50px;">' +
