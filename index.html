@@ -16,9 +16,9 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-
+            var jsonURL = getUrlVars('syncer_data');
             var table = $('#songTable').DataTable({
-                ajax: 'songlist.json',
+                ajax: 'https://gntransition.rti.org/UltraStar/Process/?url=' + jsonURL,
                 columns: [
                     {
                         className: 'dt-control',
@@ -26,7 +26,7 @@
                         data: null,
                         defaultContent: '',
                     },
-                    { data: 'imageHTML' },
+                    { data: 'coverurl' },
                     { data: 'artist' },
                     { data: 'title' },
                     { data: 'year' },
@@ -55,7 +55,7 @@
 
         function format(d) {
             // `d` is the original data object for the row
-            var img = d.imageHTML;
+            var img = d.coverurl;
 
             return (
                 '<div class="container" style="padding-left:50px;">' +
@@ -80,6 +80,17 @@
                 '</div>' +
                 '</div>'
             );
+        }
+
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
         }
     </script>
 
@@ -117,6 +128,5 @@
             </tfoot>
         </table>
     </div>
-
 </body>
 </html>
